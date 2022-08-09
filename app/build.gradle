@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -85,7 +86,4 @@ dependencies {
     // Glide
     implementation "com.github.bumptech.glide:glide:$version_glide"
     kapt "com.github.bumptech.glide:compiler:$version_glide"
-
-    // Parcelable
-    implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.7.10"
 }
