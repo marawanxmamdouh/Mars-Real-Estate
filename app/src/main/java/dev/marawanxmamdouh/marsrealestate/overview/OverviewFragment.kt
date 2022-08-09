@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import dev.marawanxmamdouh.marsrealestate.R
 import dev.marawanxmamdouh.marsrealestate.databinding.FragmentOverviewBinding
+import dev.marawanxmamdouh.marsrealestate.network.MarsApiFilter
 
 /**
  * This fragment shows the the status of the Mars real-estate web services transaction.
@@ -62,9 +63,14 @@ class OverviewFragment : Fragment() {
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when (menuItem.itemId) {
-                    else -> false
-                }
+                viewModel.updateFilter(
+                    when (menuItem.itemId) {
+                        R.id.show_rent_menu -> MarsApiFilter.SHOW_RENT
+                        R.id.show_buy_menu -> MarsApiFilter.SHOW_BUY
+                        else -> MarsApiFilter.SHOW_ALL
+                    }
+                )
+                return true
             }
 
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
