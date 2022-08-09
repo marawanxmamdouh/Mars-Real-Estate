@@ -20,6 +20,10 @@
         android:id="@+id/detailFragment"
         android:name="dev.marawanxmamdouh.marsrealestate.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="selectedProperty"
+            app:argType="dev.marawanxmamdouh.marsrealestate.network.MarsProperty" />
+    </fragment>
 
 </navigation>
